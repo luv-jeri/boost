@@ -1,7 +1,7 @@
 {
   "name": "boost",
   "version": "1.0.0",
-  "description": "Prompt enhancer skill — transforms rough prompts into structured, context-rich prompts before execution. Just add /boost to any prompt.",
+  "description": "Agent skills for team velocity — /boost transforms rough prompts into structured prompts, /pixel turns Figma designs into pixel-perfect UI through design maps and incremental build-verify cycles.",
   "license": "MIT",
   "author": "Sanjay Kumar",
   "keywords": [
@@ -10,6 +10,10 @@
     "prompt-engineering",
     "prompt-enhancer",
     "boost",
+    "pixel",
+    "figma",
+    "pixel-perfect",
+    "ui",
     "cursor",
     "gemini",
     "codex"
