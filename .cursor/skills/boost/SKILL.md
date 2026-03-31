@@ -49,7 +49,7 @@ Scan the raw prompt for keywords (case-insensitive) to classify into one of 7 ca
 
 **Tie-breaking priority:** Debug > Feature > Refactor > Test > Review > Docs > General
 
-Count keyword matches per category. Highest count wins. If tied, use the priority order above.
+Count keyword matches per category. Highest count wins. If tied, use the priority order above. Debug is highest because "fix" and "error" co-occur with other categories but debugging is almost always the primary intent.
 
 ## Step 3: Discover Context
 
