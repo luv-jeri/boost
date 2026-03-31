@@ -1,0 +1,22 @@
+{
+  "name": "boost",
+  "version": "1.0.0",
+  "description": "Prompt enhancer skill — transforms rough prompts into structured, context-rich prompts before execution. Just add /boost to any prompt.",
+  "license": "MIT",
+  "author": "Sanjay Kumar",
+  "keywords": [
+    "claude-code-plugin",
+    "agent-skill",
+    "prompt-engineering",
+    "prompt-enhancer",
+    "boost",
+    "cursor",
+    "gemini",
+    "codex"
+  ],
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": ""
+  }
+}
