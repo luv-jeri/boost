@@ -1,41 +1,202 @@
+<h1 align="center">Nonlu Skills</h1>
+
 <p align="center">
-  <img src="https://img.shields.io/badge/%F0%9F%9A%80_Boost-Prompt_Enhancer-blueviolet?style=for-the-badge" alt="Boost — Prompt Enhancer" />
-  <img src="https://img.shields.io/badge/%F0%9F%8E%AF_Pixel-Figma_to_Perfect_UI-blue?style=for-the-badge" alt="Pixel — Figma to Perfect UI" />
+  <strong>AI agent skills that help your team ship faster.</strong><br/>
+  <em>Better prompts. Pixel-perfect UI. No more guesswork.</em>
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/%F0%9F%9A%80_Boost-Prompt_Enhancer-blueviolet?style=for-the-badge" alt="Boost" />
+  <img src="https://img.shields.io/badge/%F0%9F%8E%AF_Pixel-Figma_to_Perfect_UI-blue?style=for-the-badge" alt="Pixel" />
+</p>
+
+<p align="center">
+  <a href="#-quick-start"><img src="https://img.shields.io/badge/Get_Started-2_min_setup-success?style=flat-square" alt="Get Started" /></a>
   <img src="https://img.shields.io/badge/license-MIT-green?style=flat-square" alt="MIT License" />
-  <img src="https://img.shields.io/badge/platforms-16%2B_tools-blue?style=flat-square" alt="16+ Platforms" />
-  <img src="https://img.shields.io/badge/skills-2-orange?style=flat-square" alt="2 Skills" />
-  <img src="https://img.shields.io/badge/Agent_Skills_Spec-compliant-brightgreen?style=flat-square" alt="Agent Skills Spec Compliant" />
+  <img src="https://img.shields.io/badge/platforms-16%2B_AI_tools-blue?style=flat-square" alt="16+ Platforms" />
+  <img src="https://img.shields.io/badge/zero_dependencies-pure_markdown-orange?style=flat-square" alt="Zero Dependencies" />
+  <img src="https://img.shields.io/badge/Agent_Skills_Spec-compliant-brightgreen?style=flat-square" alt="Agent Skills Spec" />
 </p>
+
+<br/>
 
 <p align="center">
-  <strong>Agent skills that help your team ship faster — better prompts, pixel-perfect UI.</strong>
+  <code>/boost</code> — Stop giving your AI vague prompts<br/>
+  <code>/pixel</code> — Stop getting "close enough" UI from Figma designs
 </p>
 
 ---
 
-## Skills
+<br/>
 
-| Skill | Trigger | What It Does |
-|-------|---------|-------------|
-| **Boost** | `/boost` | Transforms rough prompts into structured, context-rich prompts before your AI agent executes them |
-| **Pixel** | `/pixel` | Transforms Figma designs into pixel-perfect UI through design maps and incremental build-verify cycles |
+## What's Inside
+
+| | Skill | Trigger | One-liner |
+|---|-------|---------|-----------|
+| :rocket: | **Boost** | `/boost` | Transforms rough prompts into structured, context-rich prompts |
+| :dart: | **Pixel** | `/pixel` | Transforms Figma designs into pixel-perfect UI with zero guesswork |
+
+<br/>
 
 ---
 
-## Boost — Prompt Enhancer
+<br/>
 
-> *"fix the login thing it's broken"* becomes a structured prompt with task type, context, constraints, and success criteria.
+## :dart: Pixel — Figma to Pixel-Perfect UI
 
-### The Problem
+> **The #1 problem:** You give the AI a Figma design and it builds something "close" — wrong spacing, hardcoded colors, missing hover states, no responsive, skipped animations. Then you spend hours fixing it.
 
-Your AI agent gets vague prompts and starts guessing. No context. No constraints. No success criteria.
+`/pixel` eliminates this entirely.
 
-### The Solution
+<br/>
 
-Add `/boost` to any prompt. Boost detects the task type, discovers project context, and structures everything before the agent starts working.
+### The Pixel Difference
+
+<table>
+<tr>
+<td width="50%">
+
+#### :x: Without Pixel
+
+```
+"Build this Figma design"
+
+→ AI eyeballs the screenshot
+→ Guesses spacing (close but wrong)
+→ Hardcodes colors (#3B82F6 instead of your token)
+→ Skips hover, loading, empty states
+→ No responsive behavior
+→ No animations
+→ You spend 2+ hours fixing
+```
+
+</td>
+<td width="50%">
+
+#### :white_check_mark: With Pixel
+
+```
+"/pixel https://figma.com/design/abc123"
+
+→ AI creates complete Design Map
+→ Maps every value to YOUR tokens
+→ Asks about ambiguities BEFORE coding
+→ Builds one component at a time
+→ Verifies each against the design
+→ Runs 6-point final audit
+→ Ships pixel-perfect
+```
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+### How It Works
+
+```
+/pixel <figma-url or screenshot>
+            │
+    ┌───────┴───────┐
+    │  PHASE 1:     │
+    │  Design Map   │
+    └───────┬───────┘
+            │
+   1. Detect Input
+      Figma MCP? Screenshot? Pasted specs? All of them?
+            │
+   2. Create Design Map ─────────────────────────────────┐
+      ├─ Layout hierarchy (grid, flex, nesting)          │
+      ├─ Component inventory (every variant & state)     │ 7 sections
+      ├─ Design tokens (mapped to YOUR system)           │ covering
+      ├─ Responsive behavior (per breakpoint)            │ everything
+      ├─ Micro-interactions (hover, transitions)         │
+      ├─ Assets (icons, images, exports needed)          │
+      └─ Open questions (ambiguities flagged)  ──────────┘
+            │
+   3. Q&A Gate
+      "No mobile design — infer responsive or desktop-only?"
+      "Hover state not shown — should cards have hover?"
+      ALL questions answered BEFORE any code
+            │
+    ┌───────┴───────┐
+    │  PHASE 2:     │
+    │  Build        │
+    └───────┬───────┘
+            │
+   4. Build Order (outside-in, top-to-bottom)
+            │
+   5. Build → Verify → Next ──── repeats per component
+            │
+   6. Final Audit
+      ├─ Pixel comparison (visual match)
+      ├─ Token audit (grep for hardcoded values)
+      ├─ Responsive audit (every breakpoint)
+      ├─ State audit (hover, loading, error, empty)
+      ├─ Interaction audit (animations, transitions)
+      └─ Accessibility baseline (contrast, focus, semantics)
+```
+
+<br/>
+
+### Why This Matters
+
+| Problem | How Pixel Solves It |
+|---------|-------------------|
+| **Hardcoded colors everywhere** | Reads your tailwind config / CSS variables, maps every Figma value to existing tokens |
+| **Missing component states** | Inventories every state (hover, disabled, loading, error, empty) — asks if Figma doesn't show them |
+| **"Close enough" spacing** | Extracts exact values from Figma, matches to your spacing scale — flags mismatches |
+| **No responsive behavior** | Dedicated responsive section in design map — never silently skips mobile |
+| **Skipped animations** | Micro-interactions are part of the build order, not an afterthought |
+| **AI guesses when confused** | Q&A gate forces questions BEFORE code — no more silent wrong assumptions |
+| **Hard to find what's wrong** | Builds one component at a time with verification, not a monolithic dump |
+
+<br/>
+
+### Pixel Usage
+
+```bash
+# With Figma URL (uses Figma MCP for precise values)
+/pixel https://figma.com/design/abc123
+
+# With screenshot in context
+/pixel
+
+# With pasted specs from Figma Dev Mode
+/pixel
+
+# Relaxed mode — checkpoint after sections, not every component
+/pixel --relaxed https://figma.com/design/abc123
+
+# Fast mode — build everything, audit at the end
+/pixel!
+```
+
+### Input Flexibility
+
+Works with whatever you have — no single tool required:
+
+| Input | Best For |
+|-------|---------|
+| **Figma MCP** | Precise token values, exact styles, component hierarchy |
+| **Screenshots** | Quick visual reference, overall composition |
+| **Dev Mode Export** | Exact CSS values straight from the designer |
+| **All combined** | Cross-referenced for maximum accuracy |
+
+<br/>
+
+---
+
+<br/>
+
+## :rocket: Boost — Prompt Enhancer
+
+> **The problem:** Your AI agent gets *"fix the login thing"* and starts guessing. No context. No constraints. No success criteria. 3 rounds of back-and-forth later, maybe it's fixed.
+
+`/boost` transforms that into a structured prompt in seconds.
+
+<br/>
 
 ### Before & After
 
@@ -43,19 +204,19 @@ Add `/boost` to any prompt. Boost detects the task type, discovers project conte
 <tr>
 <td width="50%">
 
-#### Without Boost
+#### :x: Without Boost
 
 ```
 fix the login page it keeps
 crashing when I click submit
 ```
 
-The agent guesses what's wrong, reads random files, and maybe fixes it after 3 back-and-forth attempts.
+Agent guesses, reads random files, maybe fixes it after 3 attempts.
 
 </td>
 <td width="50%">
 
-#### With Boost
+#### :white_check_mark: With Boost
 
 ```
 ## Task: Fix crash on login form submission
@@ -75,11 +236,15 @@ The agent guesses what's wrong, reads random files, and maybe fixes it after 3 b
   - All auth tests pass
 ```
 
+Agent knows exactly what to do.
+
 </td>
 </tr>
 </table>
 
-### Usage
+<br/>
+
+### Boost Usage
 
 ```bash
 # Suffix (most natural)
@@ -95,248 +260,227 @@ add dark mode /boost!
 /boost --init
 ```
 
-### Task Categories
+### 7 Task Categories — Auto-Detected
 
-| Category | Trigger Keywords | What Boost Adds |
-|----------|-----------------|-----------------|
-| **Debug** | fix, bug, error, crash | Symptoms, expected/actual, investigation points |
-| **Feature** | add, create, build, implement | Requirements, acceptance criteria, edge cases |
-| **Refactor** | refactor, clean up, simplify | Current state, target state, boundaries |
-| **Test** | test, coverage, spec | Test targets, types, edge cases, mocking strategy |
-| **Review** | review, audit, check | Scope, focus areas, severity-based output |
-| **Docs** | document, explain, readme | Audience, scope, format, examples |
-| **General** | *(fallback)* | Goal, approach, constraints |
+| | Category | Triggers | What Gets Added |
+|---|----------|---------|-----------------|
+| :bug: | **Debug** | fix, bug, error, crash | Symptoms, expected vs actual, investigation points |
+| :sparkles: | **Feature** | add, create, build | Requirements, acceptance criteria, edge cases |
+| :recycle: | **Refactor** | refactor, clean up | Current state, target state, boundaries |
+| :test_tube: | **Test** | test, coverage, spec | Targets, types, edge cases, mocking strategy |
+| :mag: | **Review** | review, audit, check | Scope, focus areas, severity output |
+| :book: | **Docs** | document, explain | Audience, scope, format, examples |
+| :gear: | **General** | *(anything else)* | Goal, approach, constraints |
 
-### Team Collaboration
-
-Boost uses a shared `boost-patterns.md` file as your team's prompt knowledge base:
+### Team Knowledge Base
 
 ```bash
-# Bootstrap patterns from your codebase
+# Auto-generate patterns from your codebase
 /boost --init
 
-# Commit so everyone gets shared context
-git add boost-patterns.md && git commit -m "feat: add boost team patterns"
+# Everyone gets shared context
+git add boost-patterns.md && git commit -m "feat: add team patterns"
 ```
 
-The patterns file maps team terminology, conventions, common tasks, and protected areas — so every team member's prompts get the same shared context.
+Maps your team's terminology, conventions, protected areas, and common workflows — so every prompt gets the same context automatically.
+
+<br/>
 
 ---
 
-## Pixel — Figma to Pixel-Perfect UI
+<br/>
 
-> *"Build this Figma design"* becomes a structured design map, Q&A session, and incremental build with verification at every step.
+## :zap: Quick Start
 
-### The Problem
-
-You give the AI a Figma URL or screenshot and it builds something that's "close" — wrong spacing, hardcoded colors, missing hover states, no responsive behavior, skipped micro-interactions.
-
-### The Solution
-
-Add `/pixel` to your prompt. Pixel creates a complete design map first, resolves ambiguities through Q&A, then builds one component at a time with verification checkpoints.
-
-### How It Works
-
-```
-You type:  "/pixel https://figma.com/design/abc123"
-                    |
-           Phase 1: Design Map
-                    |
-            1. Detect input (Figma MCP, screenshot, specs)
-                    |
-            2. Create Design Map
-               ├─ Layout structure (hierarchy, flexbox/grid)
-               ├─ Component inventory (variants, states)
-               ├─ Design tokens (mapped to your system)
-               ├─ Responsive behavior (breakpoints)
-               ├─ Micro-interactions (hover, transitions)
-               ├─ Assets (icons, images)
-               └─ Open questions (ambiguities)
-                    |
-            3. Q&A Gate — resolve questions before code
-                    |
-           Phase 2: Incremental Build
-                    |
-            4. Generate build order (outside-in)
-                    |
-            5. Build → Verify → Next component
-                    |
-            6. Final 6-point audit
-               ├─ Pixel comparison
-               ├─ Token audit (no hardcoded values)
-               ├─ Responsive audit
-               ├─ State audit
-               ├─ Interaction audit
-               └─ Accessibility baseline
-```
-
-### Usage
+### 1. Clone
 
 ```bash
-# With Figma URL
-/pixel https://figma.com/design/abc123
-
-# With screenshot already in context
-/pixel
-
-# With pasted specs from Figma Dev Mode
-/pixel
-
-# Relaxed mode (checkpoint after sections, not components)
-/pixel --relaxed https://figma.com/design/abc123
-
-# Fast-track (no checkpoints, final audit only)
-/pixel!
+git clone https://github.com/luv-jeri/nonlu-skill.git
+cd nonlu-skill
 ```
 
-### Input Support
+### 2. Install
 
-| Input Method | What It Provides |
-|---|---|
-| **Figma MCP** | Precise token values, component hierarchy, exact styles |
-| **Screenshots** | Visual layout truth, overall composition |
-| **Dev Mode Export** | Exact CSS values from the designer |
-| **Multiple inputs** | Cross-referenced for highest accuracy |
-
-### Key Features
-
-| Feature | Description |
-|---------|-------------|
-| **Design Map** | 7-section structured analysis before any code is written |
-| **Q&A Gate** | All ambiguities resolved before implementation begins |
-| **Token Matching** | Every value mapped to your design system — no hardcoded colors or spacing |
-| **Incremental Build** | One component at a time with verification after each |
-| **6-Point Audit** | Pixel comparison, tokens, responsive, states, interactions, accessibility |
-| **Stack-Aware** | Works with Tailwind, CSS modules, plain CSS, shadcn, Radix, MUI |
-| **7 Iron Laws** | Non-negotiable guardrails prevent guessing and skipping |
-| **Graceful Degradation** | Figma MCP fails? Falls back with transparency, never silently |
-
----
-
-## Quick Start
-
-### Installation
-
-<details>
-<summary><strong>Claude Code</strong> (recommended)</summary>
+<details open>
+<summary><strong>Claude Code</strong></summary>
 
 ```bash
-claude plugins install boost
+cp -r skills/boost/ ~/.claude/skills/boost/
+cp -r skills/pixel/ ~/.claude/skills/pixel/
 ```
 </details>
 
 <details>
 <summary><strong>Cursor</strong></summary>
 
-Copy the `skills/` directory to `.cursor/skills/` in your project.
+```bash
+cp -r skills/boost/ ~/.cursor/skills/boost/
+cp -r skills/pixel/ ~/.cursor/skills/pixel/
+```
 </details>
 
 <details>
 <summary><strong>Gemini CLI</strong></summary>
 
-Copy the `skills/` directory to `.gemini/skills/` in your project.
+```bash
+cp -r skills/boost/ ~/.gemini/skills/boost/
+cp -r skills/pixel/ ~/.gemini/skills/pixel/
+```
 </details>
 
 <details>
 <summary><strong>OpenAI Codex</strong></summary>
 
-Copy the `skills/` directory to `.agents/skills/` in your project.
+```bash
+cp -r skills/boost/ ~/.agents/skills/boost/
+cp -r skills/pixel/ ~/.agents/skills/pixel/
+```
 </details>
 
 <details>
 <summary><strong>Any Agent Skills-compatible tool</strong></summary>
 
-This plugin follows the [Agent Skills spec](https://agentskills.io). Copy `skills/` to your tool's skills directory.
+This package follows the [Agent Skills spec](https://agentskills.io). Copy `skills/` to your tool's skills directory.
 
-Supported: Claude Code, Cursor, Gemini CLI, Codex, Copilot, Windsurf, and 10+ more.
+Works with: Claude Code, Cursor, Gemini CLI, Codex, Copilot, Windsurf, and 10+ more.
 </details>
 
----
+### 3. Use
 
-## Architecture
-
-```
-skills/
-├── boost/
-│   ├── SKILL.md                 # Trigger file (<150 words)
-│   ├── references/
-│   │   ├── flow.md              # Complete 9-step process
-│   │   ├── task-templates.md    # 7 category templates
-│   │   ├── context-discovery.md # 4-priority context system
-│   │   ├── red-flags.md         # Iron laws & guardrails
-│   │   └── prompt-passthrough.md # Structure detection
-│   ├── examples/
-│   │   └── before-after.md      # 7 transformations
-│   └── tests/
-│       ├── eval-triggers.md     # 20 trigger accuracy tests
-│       └── eval-quality.md      # Quality grading rubric
-├── pixel/
-│   ├── SKILL.md                 # Trigger file (<150 words)
-│   ├── references/
-│   │   ├── flow.md              # 2-phase process (Map → Build)
-│   │   ├── design-map.md        # 7-section design map
-│   │   ├── input-detection.md   # Figma MCP, screenshot, specs
-│   │   ├── token-extraction.md  # Token discovery & matching
-│   │   ├── verification.md      # Checkpoints & final audit
-│   │   └── red-flags.md         # Iron laws & guardrails
-│   ├── examples/
-│   │   └── design-map-example.md # Complete example
-│   └── tests/
-│       ├── eval-triggers.md     # 20 trigger accuracy tests
-│       └── eval-quality.md      # Quality grading rubric
-patterns/
-└── boost-patterns.md            # Team shared knowledge
+```bash
+# Open a new session in any project, then:
+/boost fix the auth bug          # structured prompt
+/pixel https://figma.com/...     # pixel-perfect UI
 ```
 
-**Progressive disclosure:** Only `SKILL.md` loads initially (~145 words per skill). Reference files load on demand. Your context window stays clean.
+<br/>
 
 ---
 
-## Evaluation Framework
+<br/>
 
-Both skills include built-in quality assurance:
+## :building_construction: Architecture
 
-- **Trigger Tests** — 20 scenarios per skill validating when to activate vs stay silent (90% accuracy threshold)
-- **Quality Rubric** — Multi-dimension grading with minimum score thresholds
+```
+nonlu-skill/
+├── skills/
+│   ├── boost/                       # Prompt Enhancer
+│   │   ├── SKILL.md                 # Trigger (<150 words)
+│   │   ├── references/              # Process logic (loaded on demand)
+│   │   │   ├── flow.md              #   9-step enhancement process
+│   │   │   ├── task-templates.md    #   7 category templates
+│   │   │   ├── context-discovery.md #   4-priority context system
+│   │   │   ├── red-flags.md         #   Iron laws & guardrails
+│   │   │   └── prompt-passthrough.md #  Structure detection
+│   │   ├── examples/
+│   │   │   └── before-after.md      #   7 complete transformations
+│   │   └── tests/                   #   Trigger + quality evals
+│   │
+│   └── pixel/                       # Figma to Pixel-Perfect UI
+│       ├── SKILL.md                 # Trigger (<150 words)
+│       ├── references/              # Process logic (loaded on demand)
+│       │   ├── flow.md              #   2-phase process (Map → Build)
+│       │   ├── design-map.md        #   7-section design map structure
+│       │   ├── input-detection.md   #   Figma MCP / screenshot / specs
+│       │   ├── token-extraction.md  #   Token discovery & matching
+│       │   ├── verification.md      #   Checkpoints & 6-point audit
+│       │   └── red-flags.md         #   Iron laws & guardrails
+│       ├── examples/
+│       │   └── design-map-example.md #  Complete design map example
+│       └── tests/                   #   Trigger + quality evals
+│
+├── patterns/
+│   └── boost-patterns.md            # Team shared knowledge (git-tracked)
+├── CLAUDE.md                        # Contributor conventions
+└── package.json                     # Package metadata
+```
 
-See each skill's `tests/` directory.
+**Zero dependencies. Pure markdown.** Only `SKILL.md` (~145 words) loads initially per skill. Everything else loads on demand — your context window stays clean.
+
+<br/>
 
 ---
 
-## Platform Support
+<br/>
 
-Built on the [Agent Skills spec](https://agentskills.io) — works everywhere:
+## :test_tube: Built-in Quality Assurance
 
-| Platform | Status | Installation |
-|----------|--------|-------------|
-| Claude Code | Supported | `claude plugins install boost` |
-| Cursor | Supported | Copy to `.cursor/skills/` |
-| Gemini CLI | Supported | Copy to `.gemini/skills/` |
-| OpenAI Codex | Supported | Copy to `.agents/skills/` |
-| GitHub Copilot | Supported | Copy to skills directory |
-| Windsurf | Supported | Copy to `.windsurf/skills/` |
-| Any Agent Skills tool | Supported | Copy to tool's skills location |
+Every skill ships with its own evaluation framework:
+
+| | Eval Type | What It Tests | Threshold |
+|---|-----------|--------------|-----------|
+| :dart: | **Trigger Tests** | Does the skill activate correctly? (20 scenarios each) | 90% accuracy |
+| :bar_chart: | **Quality Rubric** | Is the output good enough? (multi-dimension scoring) | Minimum score per dimension |
+
+Run evals by reviewing the test files in each skill's `tests/` directory.
+
+<br/>
 
 ---
 
-## Contributing
+<br/>
 
-See `CLAUDE.md` for contributor conventions. Key rules:
+## :globe_with_meridians: Platform Support
+
+Built on the [Agent Skills spec](https://agentskills.io) — works with every major AI coding tool:
+
+| Platform | Status |
+|----------|--------|
+| Claude Code | :white_check_mark: Supported |
+| Cursor | :white_check_mark: Supported |
+| Gemini CLI | :white_check_mark: Supported |
+| OpenAI Codex | :white_check_mark: Supported |
+| GitHub Copilot | :white_check_mark: Supported |
+| Windsurf | :white_check_mark: Supported |
+| Any Agent Skills tool | :white_check_mark: Supported |
+
+<br/>
+
+---
+
+<br/>
+
+## :handshake: Contributing
+
+We'd love contributions! This is **all markdown** — no app code, easy to jump in.
+
+- **Have a skill idea?** [Open an issue](https://github.com/luv-jeri/nonlu-skill/issues)
+- **Found a bug?** [Report it](https://github.com/luv-jeri/nonlu-skill/issues)
+- **Want to build a skill?** Check `CLAUDE.md` for conventions
+
+### Key Rules
 
 - Each skill lives in `skills/<name>/`
-- `SKILL.md` must stay under 150 words
-- All logic lives in `references/` (loaded on demand)
-- Test changes with the eval framework
+- `SKILL.md` must stay under 150 words (trigger only)
+- All logic in `references/` (loaded on demand)
+- Every skill needs trigger tests + quality rubric
 - Follow progressive disclosure: metadata → SKILL.md → references → examples
+
+### Skill Ideas We'd Love Help With
+
+- `/review` — Structured PR review with consistent criteria
+- `/migrate` — Step-by-step framework/library migration workflows
+- `/incident` — Incident triage and root cause analysis
+- `/onboard` — New contributor setup and codebase orientation
+
+<br/>
 
 ---
 
-## License
+<br/>
+
+## :scroll: License
 
 MIT — see [LICENSE](LICENSE)
 
----
+<br/>
 
 <p align="center">
   <strong>Better prompts. Pixel-perfect UI. Ship faster.</strong>
+</p>
+
+<p align="center">
+  <a href="https://github.com/luv-jeri/nonlu-skill">
+    <img src="https://img.shields.io/badge/Star_on_GitHub-%E2%AD%90-yellow?style=for-the-badge" alt="Star on GitHub" />
+  </a>
 </p>
