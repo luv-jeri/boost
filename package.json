@@ -17,6 +17,6 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/luv-jeri/boost.git"
   }
 }
