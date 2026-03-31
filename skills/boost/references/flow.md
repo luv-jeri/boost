@@ -159,4 +159,31 @@ After execution completes, if unresolved terms exist (from Step 4):
 
 ---
 
-Commit: `git add skills/boost/references/flow.md && git commit -m "feat(boost): add complete 9-step flow with flowchart and edge cases"`
+## Auto-Generate Patterns
+
+When a user runs `/boost --init` in a project for the first time, Boost can auto-generate a starter `boost-patterns.md` by scanning the codebase:
+
+1. Read `package.json` / `pyproject.toml` / `go.mod` → extract project name, dependencies, scripts
+2. Scan top-level directory structure → generate Aliases for major directories
+3. Read existing `CLAUDE.md` / `AGENTS.md` / `.cursorrules` → extract conventions
+4. Check `git log --oneline -20` → identify active areas and recent contributors
+5. Read `.gitignore` patterns → populate "Do Not Touch" section
+6. Present the generated patterns to the user for review before saving
+
+This is a one-time bootstrap. After that, the adaptive learning system (Step 9) keeps patterns up to date incrementally.
+
+## Team Collaboration
+
+Boost is designed for teams. The `boost-patterns.md` file is the shared knowledge layer:
+
+- **Git-tracked** — commit it so the whole team shares the same context
+- **Incrementally learned** — every team member's `/boost` usage can suggest new patterns
+- **Conflict-free** — append-only sections minimize merge conflicts
+- **Onboarding accelerator** — new team members get the team's vocabulary instantly
+
+**Workflow:**
+1. Tech lead runs `/boost --init` to bootstrap patterns from the codebase
+2. Team commits `boost-patterns.md` to the repo
+3. Each team member uses `/boost` normally — suggestions accumulate
+4. During PR review, new pattern suggestions get added to the file
+5. Over time, the team's prompts get consistently structured and context-rich

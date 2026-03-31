@@ -28,6 +28,10 @@ Read `references/flow.md` for the complete enhancement process.
 8. EXECUTE — work on the structured prompt
 9. SUGGEST — offer pattern additions
 
+## Team Bootstrap
+
+- **`/boost --init`** — Auto-generate `boost-patterns.md` by scanning the codebase (see `references/flow.md` → Auto-Generate Patterns)
+
 ## Iron Laws
 
 Read `references/red-flags.md` before proceeding. Non-negotiable.
