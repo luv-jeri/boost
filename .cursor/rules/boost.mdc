@@ -1,0 +1,11 @@
+---
+description: Invoke when user includes /boost or /boost! in their prompt to restructure and enhance it before execution
+alwaysApply: false
+globs:
+---
+
+# Boost — Prompt Enhancer
+
+When the user includes `/boost` or `/boost!` in their prompt, activate the boost skill at `.cursor/skills/boost/SKILL.md` to restructure their rough prompt into a clear, structured, context-rich prompt before execution.
+
+See the full skill instructions in `.cursor/skills/boost/SKILL.md`.
