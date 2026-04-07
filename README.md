@@ -8,6 +8,8 @@
 <p align="center">
   <img src="https://img.shields.io/badge/%F0%9F%9A%80_Boost-Prompt_Enhancer-blueviolet?style=for-the-badge" alt="Boost" />
   <img src="https://img.shields.io/badge/%F0%9F%8E%AF_Pixel-Figma_to_Perfect_UI-blue?style=for-the-badge" alt="Pixel" />
+  <img src="https://img.shields.io/badge/%F0%9F%9B%A1_QA_Shield-Post--Build_QA-green?style=for-the-badge" alt="QA Shield" />
+  <img src="https://img.shields.io/badge/%F0%9F%91%80_QA_Watch-Build_Companion-orange?style=for-the-badge" alt="QA Watch" />
 </p>
 
 <p align="center">
@@ -22,7 +24,9 @@
 
 <p align="center">
   <code>/boost</code> — Stop giving your AI vague prompts<br/>
-  <code>/pixel</code> — Stop getting "close enough" UI from Figma designs
+  <code>/pixel</code> — Stop getting "close enough" UI from Figma designs<br/>
+  <code>/qa-shield</code> — Stop shipping attention-to-detail bugs to QA<br/>
+  <code>/qa-watch</code> — Catch issues as you build, not after
 </p>
 
 ---
@@ -35,6 +39,8 @@
 |---|-------|---------|-----------|
 | :rocket: | **Boost** | `/boost` | Transforms rough prompts into structured, context-rich prompts |
 | :dart: | **Pixel** | `/pixel` | Transforms Figma designs into pixel-perfect UI with zero guesswork |
+| :shield: | **QA Shield** | `/qa-shield` | Catches attention-to-detail issues across 9 categories before QA finds them |
+| :eyes: | **QA Watch** | `/qa-watch` | Lightweight QA companion that checks for issues as you build |
 
 <br/>
 
@@ -183,6 +189,107 @@ Works with whatever you have — no single tool required:
 | **Screenshots** | Quick visual reference, overall composition |
 | **Dev Mode Export** | Exact CSS values straight from the designer |
 | **All combined** | Cross-referenced for maximum accuracy |
+
+<br/>
+
+---
+
+<br/>
+
+## :shield: QA Shield — Post-Build Verification
+
+> **The #1 problem:** You build a feature, push it, and QA comes back with: overflow issues, missing hover states, broken scroll, inconsistent spacing, no error states. These aren't bugs — they're attention-to-detail gaps you missed.
+
+`/qa-shield` eliminates this by systematically checking 9 categories of attention-to-detail issues.
+
+<br/>
+
+### How It Works
+
+```
+/qa-shield
+
+→ Scopes to your changed files (git diff)
+→ Analyzes what you built
+→ Runs 9 category checks (or marks irrelevant ones N/A)
+→ Produces structured report with severity + locations
+→ Offers to auto-fix what it can
+```
+
+<br/>
+
+### 9 Categories
+
+| # | Category | What It Catches |
+|---|----------|----------------|
+| 1 | Figma Fidelity | Spacing, colors, typography drift from design |
+| 2 | Data/API Mismatch | Missing null checks, untyped responses, no loading states |
+| 3 | Edge Cases | Missing error/loading/empty states, boundary inputs |
+| 4 | User Flow Gaps | Dead ends, missing back navigation, no confirmations |
+| 5 | Micro-interactions | Missing hover/focus states, no action feedback |
+| 6 | Logging | Swallowed errors, missing analytics, console.log leftovers |
+| 7 | Overflow | Text/container overflow, long content breaking layout |
+| 8 | Scroll | Missing scroll areas, broken sticky headers |
+| 9 | Detail | Inconsistent radius/shadows, wrong cursors, z-index issues |
+
+<br/>
+
+### QA Shield Usage
+
+| Command | What It Does |
+|---|---|
+| `/qa-shield` | Scan changed files, all 9 categories |
+| `/qa-shield <figma-url>` | Include Figma fidelity comparison |
+| `/qa-shield --focus=overflow,scroll` | Check specific categories only |
+| `/qa-shield!` | Fast-track — no confirmations |
+| `/qa-shield src/components/` | Scan specific path |
+
+<br/>
+
+---
+
+<br/>
+
+## :eyes: QA Watch — Lightweight QA During Development
+
+> **Don't wait for the end.** `/qa-watch` catches issues as you build — overflow, missing states, hover gaps — so you fix them in the moment instead of the cleanup phase.
+
+<br/>
+
+### How It Works
+
+```
+/qa-watch
+
+→ Scans your recent changes
+→ Runs 5 quick checks (overflow, states, interactions, scroll, detail)
+→ Reports findings inline (1 line each)
+→ Doesn't interrupt your flow
+```
+
+<br/>
+
+### Session Mode
+
+```
+/qa-watch --session
+
+→ "QA Watch session active"
+→ After each component you build, auto-runs the lite checklist
+→ Surfaces findings immediately
+→ /qa-watch stop to end
+```
+
+<br/>
+
+### QA Watch Usage
+
+| Command | What It Does |
+|---|---|
+| `/qa-watch` | Quick scan of recent changes |
+| `/qa-watch --session` | Continuous checking during build |
+| `/qa-watch --focus=overflow` | Check specific category only |
+| `/qa-watch stop` | End session mode |
 
 <br/>
 
@@ -365,26 +472,23 @@ Works with: Claude Code, Cursor, Gemini CLI, Codex, Copilot, Windsurf, and 10+ m
 nonlu-skill/
 ├── skills/
 │   ├── boost/                       # Prompt Enhancer
-│   │   ├── SKILL.md                 # Trigger (<150 words)
-│   │   ├── references/              # Process logic (loaded on demand)
-│   │   │   ├── flow.md              #   9-step enhancement process
-│   │   │   ├── task-templates.md    #   7 category templates
-│   │   │   ├── context-discovery.md #   4-priority context system
-│   │   │   ├── red-flags.md         #   Iron laws & guardrails
-│   │   │   └── prompt-passthrough.md #  Structure detection
+│   │   ├── SKILL.md                 # Complete self-contained skill
+│   │   │                            #   (process, iron laws, detection,
+│   │   │                            #    context discovery, red flags)
+│   │   ├── references/
+│   │   │   └── task-templates.md    #   7 category templates (loaded per-category)
 │   │   ├── examples/
-│   │   │   └── before-after.md      #   7 complete transformations
+│   │   │   └── before-after.md      #   Complete transformations
 │   │   └── tests/                   #   Trigger + quality evals
 │   │
 │   └── pixel/                       # Figma to Pixel-Perfect UI
-│       ├── SKILL.md                 # Trigger (<150 words)
-│       ├── references/              # Process logic (loaded on demand)
-│       │   ├── flow.md              #   2-phase process (Map → Build)
-│       │   ├── design-map.md        #   7-section design map structure
-│       │   ├── input-detection.md   #   Figma MCP / screenshot / specs
-│       │   ├── token-extraction.md  #   Token discovery & matching
-│       │   ├── verification.md      #   Checkpoints & 6-point audit
-│       │   └── red-flags.md         #   Iron laws & guardrails
+│       ├── SKILL.md                 # Complete self-contained skill
+│       │                            #   (2-phase process, iron laws,
+│       │                            #    input detection, token extraction,
+│       │                            #    build flow, red flags)
+│       ├── references/
+│       │   ├── design-map.md        #   Detailed 7-section table formats
+│       │   └── verification.md      #   Detailed audit checklists
 │       ├── examples/
 │       │   └── design-map-example.md #  Complete design map example
 │       └── tests/                   #   Trigger + quality evals
@@ -395,7 +499,7 @@ nonlu-skill/
 └── package.json                     # Package metadata
 ```
 
-**Zero dependencies. Pure markdown.** Only `SKILL.md` (~145 words) loads initially per skill. Everything else loads on demand — your context window stays clean.
+**Zero dependencies. Pure markdown.** Each `SKILL.md` is fully self-contained — all essential process logic, iron laws, and enforcement inline. Reference files are supplementary only (detailed templates, table formats). Your AI executes the full skill without needing extra file reads.
 
 <br/>
 
@@ -451,10 +555,10 @@ We'd love contributions! This is **all markdown** — no app code, easy to jump 
 ### Key Rules
 
 - Each skill lives in `skills/<name>/`
-- `SKILL.md` must stay under 150 words (trigger only)
-- All logic in `references/` (loaded on demand)
+- `SKILL.md` is self-contained (all essential logic inline, 200-500 lines)
+- Reference files are supplementary only (detailed templates, examples)
+- Iron laws and red flags MUST be inline in SKILL.md
 - Every skill needs trigger tests + quality rubric
-- Follow progressive disclosure: metadata → SKILL.md → references → examples
 
 ### Skill Ideas We'd Love Help With
 
