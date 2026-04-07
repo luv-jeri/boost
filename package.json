@@ -1,7 +1,7 @@
 {
   "name": "boost",
   "version": "1.0.0",
-  "description": "Agent skills for team velocity — /boost transforms rough prompts into structured prompts, /pixel turns Figma designs into pixel-perfect UI through design maps and incremental build-verify cycles.",
+  "description": "Agent skills for team velocity — /boost transforms rough prompts into structured prompts; /pixel turns Figma designs into pixel-perfect UI; /qa-shield catches attention-to-detail issues before QA; /qa-watch provides lightweight QA checks during development.",
   "license": "MIT",
   "author": "Sanjay Kumar",
   "keywords": [
@@ -16,7 +16,12 @@
     "ui",
     "cursor",
     "gemini",
-    "codex"
+    "codex",
+    "qa-shield",
+    "qa-watch",
+    "qa",
+    "quality-assurance",
+    "attention-to-detail"
   ],
   "type": "module",
   "repository": {
