@@ -1,6 +1,6 @@
 ---
 name: qa-shield
-description: Use when user invokes /qa-shield or /qa-shield! to run post-build QA verification across 9 attention-to-detail categories
+description: Use when user invokes /qa-shield, /qa-shield!, or /qa-shield with flags like --focus, --all, or a file/directory path
 user-invokable: true
 ---
 
@@ -182,7 +182,7 @@ Present scoping results. In fast-track mode, skip confirmation and proceed. Othe
 
 ### Step 6: Run Category Checks
 
-For each active category, run the checks below. For detailed per-category checklists, see `references/checklist-categories.md`.
+For each active category, run the checks below.
 
 #### Category 1 — Figma Fidelity (requires Figma reference + Preview)
 
